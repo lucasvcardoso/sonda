@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CardinalPoints.cs" />
+    <Compile Include="Grid.cs" />
     <Compile Include="Issuer.cs" />
     <Compile Include="Orchestrator.cs" />
     <Compile Include="Position.cs" />

@@ -8,13 +8,17 @@ namespace MarsProbeCore
 {
     public class Probe
     {
-        public Position InitialPosition { get; set; }
-        public Position CurrentPosition { get; set; }
+        public Position InitialPosition { get; private set; }
+        public Position CurrentPosition { get; private set; }
+        public Grid Grid { get; private set; }
+        public char[] CommandList { get; private set; }
 
-        public Probe(Position position)
+        public Probe(Position position, Grid grid, char[] commands)
         {
             InitialPosition = position;
             CurrentPosition = position;
+            Grid = grid;
+            CommandList = commands;
         }
 
         public void Move()
@@ -22,16 +26,28 @@ namespace MarsProbeCore
             switch (CurrentPosition.CardinalPoint)
             {
                 case char cardinal when (CardinalPoints.North.Equals(cardinal)):
-                    CurrentPosition.YAxis += 1;
+                    if (CurrentPosition.YAxis < Grid.height)
+                    {
+                        CurrentPosition.YAxis += 1;
+                    }                    
                     break;
                 case char cardinal when (CardinalPoints.South.Equals(cardinal)):
-                    CurrentPosition.YAxis -= 1;
+                    if (CurrentPosition.YAxis > 0)
+                    {
+                        CurrentPosition.YAxis -= 1;
+                    }
                     break;
                 case char cardinal when (CardinalPoints.East.Equals(cardinal)):
-                    CurrentPosition.XAxis += 1;
+                    if (CurrentPosition.XAxis < Grid.width)
+                    {
+                        CurrentPosition.XAxis += 1;
+                    }
                     break;
                 case char cardinal when (CardinalPoints.West.Equals(cardinal)):
-                    CurrentPosition.XAxis -= 1;
+                    if (CurrentPosition.XAxis > 0)
+                    {
+                        CurrentPosition.XAxis -= 1;
+                    }
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("Cardinal point invalid when trying to move.");
