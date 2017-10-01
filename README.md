@@ -76,4 +76,12 @@ utilizando como referência os pontos cardeais em inflês: N, S, E, W.</p>
 
 MarsProbeConsole.exe [-help | /help | /?] [-file file]
 <br/><br/>[-help | /help | /?]    Exibe ajuda
-<br/>[-file file]            Define o local do arquivo de entrada (obrigatorio). Ex: C:\temp\input.txt</p>
+<br/>[-file file]            Define o local do arquivo de entrada (obrigatorio). Ex: C:\temp\input.txt
+
+Exemplos de execução:
+
+MarsProbeConsole.exe -help
+MarsProbeConsole.exe /help
+MarsProbeConsole.exe /?
+
+MarsProbeConsole.exe -file "C:\tmp\input.txt"
