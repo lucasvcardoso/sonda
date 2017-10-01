@@ -9,7 +9,7 @@ Um conjunto de sondas foi enviado pela NASA à Marte e irá pousar num planalto.
 
 A posição e direção de uma sonda são representadas por uma combinação de coordenadas x-y e uma letra representando a direção cardinal para qual a sonda aponta, seguindo a rosa dos ventos em inglês.
 
-<img src="https://camo.githubusercontent.com/d3a3ea854beba9f8982123ca10600781c0f72da3/687474703a2f2f692e696d6775722e636f6d2f6c69384165354c2e706e67">
+<img src="https://camo.githubusercontent.com/d3a3ea854beba9f8982123ca10600781c0f72da3/687474703a2f2f692e696d6775722e636f6d2f6c69384165354c2e706e67"/>
 
 O planalto é divido numa malha para simplificar a navegação. Um exemplo de posição seria (0, 0, N), que indica que a sonda está no canto inferior esquerdo e apontando para o Norte.
 
