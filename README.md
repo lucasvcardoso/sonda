@@ -81,7 +81,7 @@ MarsProbeConsole.exe [-help | /help | /?] [-file file]
 <br/>[-file file]            Define o local do arquivo de entrada (obrigatorio). Ex: C:\temp\input.txt
 
 Exemplos de execução:
-```dos
+```
 MarsProbeConsole.exe -help
 MarsProbeConsole.exe /help
 MarsProbeConsole.exe /?
