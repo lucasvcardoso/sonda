@@ -7,7 +7,7 @@
 
 <p>Um conjunto de sondas foi enviado pela NASA à Marte e irá pousar num planalto. Esse planalto, que curiosamente é retangular, deve ser explorado pelas sondas para que suas câmeras embutidas consigam ter uma visão completa da área e enviar as imagens de volta para a Terra.</p>
 
-<img src="https://raw.githubusercontent.com/lucasvcardoso/sonda/master/img/rover-top-view.png" style="width: 50%; height: 50%"/>
+<img src="https://raw.githubusercontent.com/lucasvcardoso/sonda/master/img/rover-top-view.png" style="width: 10%; height: 10%"/>
 
 <p>A posição e direção de uma sonda são representadas por uma combinação de coordenadas x-y e uma letra representando a direção cardinal para qual a sonda aponta, seguindo a rosa dos ventos em inglês.</p>
 
