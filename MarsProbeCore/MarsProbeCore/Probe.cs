@@ -21,6 +21,22 @@ namespace MarsProbeCore
             CommandList = commands;
         }
 
+        public void RunCommands()
+        {
+            foreach (char command in CommandList )
+            {
+                if (command == RotationSense.Right || command == RotationSense.Left)
+                {
+                    Rotate(command);
+                }
+                else if (command == 'M')
+                {
+                    Move();
+                }
+            }
+            
+        }
+
         public void Move()
         {
             switch (CurrentPosition.CardinalPoint)

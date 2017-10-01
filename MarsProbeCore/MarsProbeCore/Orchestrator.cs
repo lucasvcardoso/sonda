@@ -20,21 +20,12 @@ namespace MarsProbeCore
             try
             {
                 FileUtil fileUtil = fileUtil = new FileUtil(_inputFilePath);
-                Grid grid = fileUtil.GetGrid();
-                List<Probe> probes = fileUtil.GetProbes();
-                Issuer issuer = new Issuer(grid, probes);
-                issuer.IssueCommands();
+                List<Probe> probes = fileUtil.GetProbesFromInputFile();
+                probes.ForEach(p => p.RunCommands());
                 string outputFilePath = fileUtil.WriteOutputFile(probes);
                 return outputFilePath;
             }
             catch { throw; }
-        }
-
-        
-
-        private void ProcessInputFile()
-        {
-            
-        }
+        }               
     }
 }

@@ -15,7 +15,7 @@ namespace MarsProbe.Tests
         public void RotateTestNorthLeft()
         {
             //Arrange
-            Probe probe = new Probe(new Position(0,0,'N'), new Grid(3,3));
+            Probe probe = new Probe(new Position(0,0,'N'), new Grid(3,3), new char[0]);
             //Act
             probe.Rotate('L');
             //Assert
@@ -26,7 +26,7 @@ namespace MarsProbe.Tests
         public void RotateTestNorthRight()
         {
             //Arrange
-            Probe probe = new Probe(new Position(0, 0, 'N'), new Grid(3, 3));
+            Probe probe = new Probe(new Position(0, 0, 'N'), new Grid(3, 3), new char[0]);
             //Act
             probe.Rotate('R');
             //Assert
@@ -37,7 +37,7 @@ namespace MarsProbe.Tests
         public void RotateTestInvalid()
         {
             //Arrange
-            Probe probe = new Probe(new Position(0, 0, 'N'), new Grid(3, 3));
+            Probe probe = new Probe(new Position(0, 0, 'N'), new Grid(3, 3), new char[0]);
                        
             //Act and Assert
             Assert.Throws<ArgumentException>(delegate { probe.Rotate('B'); }, "Testing rotation to a direction that is not L or R");
@@ -47,7 +47,7 @@ namespace MarsProbe.Tests
         public void MoveNorthTest()
         {
             //Arrange
-            Probe probe = new Probe(new Position(0, 0, 'N'), new Grid(3, 3));
+            Probe probe = new Probe(new Position(0, 0, 'N'), new Grid(3, 3), new char[0]);
 
             //Act
             probe.Move();
@@ -60,7 +60,7 @@ namespace MarsProbe.Tests
         public void MoveSouthTest()
         {
             //Arrange
-            Probe probe = new Probe(new Position(0, 1, 'S'), new Grid(3, 3));
+            Probe probe = new Probe(new Position(0, 1, 'S'), new Grid(3, 3), new char[0]);
 
             //Act
             probe.Move();
@@ -73,7 +73,7 @@ namespace MarsProbe.Tests
         public void MoveEastTest()
         {
             //Arrange
-            Probe probe = new Probe(new Position(0, 0, 'E'), new Grid(3, 3));
+            Probe probe = new Probe(new Position(0, 0, 'E'), new Grid(3, 3), new char[0]);
 
             //Act
             probe.Move();
@@ -86,7 +86,7 @@ namespace MarsProbe.Tests
         public void MoveWestTest()
         {
             //Arrange
-            Probe probe = new Probe(new Position(1, 0, 'W'), new Grid(3, 3));
+            Probe probe = new Probe(new Position(1, 0, 'W'), new Grid(3, 3), new char[0]);
 
             //Act
             probe.Move();
@@ -99,10 +99,29 @@ namespace MarsProbe.Tests
         public void MoveInvalid()
         {
             //Arrange
-            Probe probe = new Probe(new Position(1, 0, 'B'), new Grid(3, 3));
+            Probe probe = new Probe(new Position(1, 0, 'B'), new Grid(3, 3), new char[0]);
            
             //Act and Assert
             Assert.Throws<ArgumentOutOfRangeException>(delegate { probe.Move(); }, "Moving to an invalid direction");
+        }
+
+        [Test]
+        public void RunCommandsTest()
+        {
+            //Arrange
+            Position position = new Position(1, 2, 'N');
+            Grid grid = new Grid(5, 5);
+            char[] commands = { 'L', 'M', 'L', 'M', 'M', 'R'};
+            Probe probe = new Probe(position, grid, commands);
+            Position expectedPosition = new Position(0, 0, 'W');
+
+            //Act
+            probe.RunCommands();
+
+            //Assert
+            Assert.AreEqual(expectedPosition.XAxis, probe.CurrentPosition.XAxis);
+            Assert.AreEqual(expectedPosition.YAxis, probe.CurrentPosition.YAxis);
+            Assert.AreEqual(expectedPosition.CardinalPoint, probe.CurrentPosition.CardinalPoint);
         }
     }
 }
