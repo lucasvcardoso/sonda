@@ -74,6 +74,6 @@ utilizando como referência os pontos cardeais em inflês: N, S, E, W.</p>
 
 <p>Para execução, abra o projeto com o Visual Studio 2017, compile, abra um prompt de comando no destino do executável (normalmente a pasta \bin dentro da pasta do projeto), e execute:
 
-<br/>MarsProbeConsole.exe [-help | /help | /?] [-file file]
+MarsProbeConsole.exe [-help | /help | /?] [-file file]
 <br/><br/>[-help | /help | /?]    Exibe ajuda
 <br/>[-file file]            Define o local do arquivo de entrada (obrigatorio). Ex: C:\temp\input.txt</p>
